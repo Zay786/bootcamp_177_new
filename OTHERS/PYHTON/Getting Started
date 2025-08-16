@@ -1,0 +1,34 @@
+print("Hello World")
+def new_func():
+    username = input("Enter your name:")
+    print(username)
+
+new_func()
+
+
+def new_func1():
+    secret_word = input("Guess the secret word: ")
+    if secret_word == "Python":
+        print("Correct! You guessed the secret word!")
+    elif secret_word == "Java":
+        print("Not quite, but close!")
+    else:
+        print("Try again!")
+
+new_func1()
+
+
+First = "Hello World"
+print(First)
+
+#This is a comment
+
+
+
+print("I am a computer!")
+
+def new_func2():
+    if 1 < 2 and 4 > 2:
+        print("Math is fun.")
+
+new_func2()

@@ -1,0 +1,52 @@
+let x = 5;
+let y = 2;
+if (x > y) {
+  console.log("x is the biggest number");
+} else if (y > x) {
+  console.log("y is the biggest number");
+} else {
+  console.log("x and y are equal");
+}
+
+// Step 1: Create the variable
+let newDog = "Chihuahua";
+
+// Step 2: Display how many letters are in newDog
+console.log("Number of letters:", newDog.length);
+
+// Step 3: Display newDog in uppercase
+console.log("Uppercase:", newDog.toUpperCase());
+
+// Step 4: Display newDog in lowercase
+console.log("Lowercase:", newDog.toLowerCase());
+
+// Step 5: Check if newDog equals "Chihuahua"
+if (newDog === "Chihuahua") {
+  console.log("I love Chihuahuas, it’s my favorite dog breed");
+} else {
+  console.log("I don't care, I prefer cats");
+}
+
+
+const readline = require('readline');
+
+// Set up interface for user input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Prompt the user
+rl.question("Enter a number: ", function(input) {
+  const number = Number(input); // convert string to number
+
+  if (isNaN(number)) {
+    console.log("That's not a valid number.");
+  } else if (number % 2 === 0) {
+    console.log(`${number} is an even number`);
+  } else {
+    console.log(`${number} is an odd number`);
+  }
+
+  rl.close(); // Close the input interface
+});

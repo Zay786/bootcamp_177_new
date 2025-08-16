@@ -1,0 +1,26 @@
+let favoriteFood = "pizza";
+let favoriteMeal = "dinner";
+console.log(`I eat ${favoriteFood} at every ${favoriteMeal}`);
+
+const myWatchedSeries = ["black mirror", "money heist", "the big bang theory"];
+let myWatchedSeriesLength = myWatchedSeries.length;
+let myWatchedSeriesSentence = myWatchedSeries.join(", ");
+console.log(`I watched ${myWatchedSeriesLength} series: ${myWatchedSeriesSentence}`);
+myWatchedSeries[2] = "friends";
+myWatchedSeries.push("suits");
+myWatchedSeries.unshift("prison break");
+let indexBlackMirror = myWatchedSeries.indexOf("black mirror");
+if (indexBlackMirror !== -1) {
+    myWatchedSeries.splice(indexBlackMirror, 1);
+}
+console.log(myWatchedSeries[myWatchedSeries.indexOf("money heist")][2]); // zero-based index
+console.log(myWatchedSeries);
+
+
+let celsius = 25;
+
+// Convert to Fahrenheit
+let fahrenheit = (celsius / 5) * 9 + 32;
+
+// Display result
+console.log(`${celsius}°C is ${fahrenheit}°F`);

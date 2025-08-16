@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <style>
+        .Home {
+            background-color: lightgrey;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            /* add this line */
+            min-height: 100vh;
+            /* optional: ensure full-height layout */
+        }
+
+        .About {
+            background-color: grey;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10rem;
+            min-height: 100vh;
+            color: beige;
+        }
+
+        .custom-btn {
+            background-color: black !important;
+            ;
+            color: white !important;
+            ;
+            font-weight: bold;
+            /* Bold text */
+            font-size: 1.25rem;
+            /* Adjust size (e.g., 1.25rem = 20px) */
+            padding: 0.75rem 1.5rem;
+            /* Bigger button size */
+            border: none;
+            /* Optional: removes default border */
+
+        }
+
+        .custom-btn:hover {
+            background-color: black !important;
+            color: white !important;
+            transform: scale(1.3);
+        }
+
+        .home-hero__socials {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: white;
+            padding: 0.75rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .home-hero_social-icon1 {
+            width: 60px;
+            height: 40px;
+        }
+
+        .home-hero_social-icon2 {
+            width: 60px;
+            height: 50px;
+        }
+
+        .home-hero__social-icon-link:hover {
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+.skill-box {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-10px);
+}
+
+.skill-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #f4c430; /* Yellowish header text */
+    border-bottom: 2px solid #f4c430;
+    padding-bottom: 0.5rem;
+}
+
+.skill-box ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.skill-box ul li {
+    padding: 0.25rem 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 1rem;
+  }
+
+  .skill-box h3 {
+    font-size: 1.25rem;
+  }
+
+  .skill-box ul li {
+    font-size: 0.95rem;
+  }
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full screen height */
+  background: #f9f9f9;
+  padding: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%; /* Match section height */
+}
+
+.contact-text {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+margin-bottom: 2.5rem
+}
+
+.contact-text h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-text p {
+  font-size: 1.25rem;
+}
+.contact-form .form-group {
+  margin-bottom: 1.5rem; /* Adjust spacing between fields */
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  justify-content: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: auto;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-text, .contact-form {
+    width: 100%;
+  }
+
+  .contact-text {
+    margin-bottom: 2rem;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-tertiary fixed-top">
+        <div class="container">
+            <button class="btn btn-md d-flex align-items-center p-0 ms-4" style="background: none; border: none;">
+                <span style="
+    width: 50px;
+    height: 50px;
+    background-color: lightblue;
+    border-radius: 50%;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 50px;
+    color: black;" class="d-inline-block">ZC</span>
+
+                <a class="navbar-brand mb-0 h1" href="#" style="text-decoration: none; color: black;">Zaynah Chummun</a>
+            </button>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="gap: 2rem;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><strong>Home</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about"><strong>About</strong></a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active me-4" aria-current="page" href="#contact"><strong>Contact</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+
+    <div class="container">
+        <section class="Home mt-5 p-5">
+            <h1>HEY, I AM ZAYNAH CHUMMUN</h1> <br>
+            <p>A Result-Oriented Data Analyst building and managing data pipelines <br> and POWERBI dashboards that lead
+                to overall success of the company</p>
+            <br>
+            <div class="mt-4">
+                <a href="#about" class="btn custom-btn me-2">ABOUT</a>
+
+            </div>
+            <div class="home-hero__socials">
+                <div class="home-hero_social">
+                    <a href="https://mu.linkedin.com/in/zaynah-chummun-877081202" class="home-hero__social-icon-link"
+                        rel="noreferrer" target="_blank">
+                        <img src="Linkedin.png" alt="LinkedIn" class="home-hero_social-icon1" />
+                    </a>
+                </div>
+                <br>
+                <div class="home-hero_social">
+                    <a href="https://github.com/Zay786" class="home-hero__social-icon-link" rel="noreferrer"
+                        target="_blank">
+                        <img src="github.png" alt="github" class="home-hero_social-icon2" />
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+  <section id="about" class="About mt-5 p-5 text-center">
+  <h1>MY PATHWAY SO FAR</h1>
+  <br>
+  <p>
+    From an <strong>Economics/Accounting</strong> student, pursued a <strong>Bachelor in Actuarial Studies</strong>,<br>
+    then moved to a <strong>Masters in Applied Statistics</strong> while working as a <strong>DATA ANALYST</strong><br>
+    since 2022 now. I specialised in <strong>DATA ANALYTICS TOOLS and DATA PIPELINES</strong>.<br>
+    I also worked with <Strong>machine learning tools</Strong> for predictive modelling and testing. <br>
+    I am now striving towards adding to the list some <strong>PROGRAMMING SKILLS</strong> as well.
+  </p>
+  <div class="skills-grid">
+    <div class="skill-box">
+        <h3>Programming Languages</h3>
+        <ul>
+            <li>SQL</li>
+            <li>Python</li>
+            <li>R Studio</li>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
+    <div class="skill-box">
+        <h3>Data Analytic Tools</h3>
+        <ul>
+            <li>Microsoft Excel</li>
+            <li>Mircrosoft PowerQuery</li>
+            <li>Talend</li>
+            <li>Visual Studio Code</li>
+        </ul>
+    </div>
+    <div class="skill-box">
+        <h3>Data Visualization Tools</h3>
+        <ul>
+            <li>Microsoft PowerBI</li>
+        </ul>
+    </div>
+    <div class="skill-box">
+        <h3>Data Analytic Methods</h3>
+        <ul>
+            <li>EDA</li>
+            <li>Segmentation / Clustering</li>
+            <li>Cohort</li>
+            <li>Linear/Logistic Regression</li>
+            <li>Statistics</li>
+            <li>ANOVA</li>
+            <li>T-Test</li>
+        </ul>
+    </div>
+     <div class="skill-box">
+        <h3>Machine Learning algorithms</h3>
+        <ul>
+            <li>Neural Networks</li>
+            <li>Random Forest</li>
+            <li>Decision Trees</li>
+            <li>XGBOOST</li>
+            <li>Support Vector Machines</li>
+        </ul>
+    </div>
+</div>
+
+</section>
+
+<section id="contact" class="contact mt-5 p-5">
+  <div class="contact-container">
+    <div class="contact-text">
+      <h2>CONTACT ME</h2>
+      <p>Feel free to contact me by filling in the form and I will get back to you as soon as I receive your details.</p>
+    </div>
+
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+  </div>
+</section>
+
+    </div>
+</body>
+
+</html>

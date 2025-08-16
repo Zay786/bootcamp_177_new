@@ -1,0 +1,10 @@
+<!DOCTYPE HTML>
+<html lang ="en">
+    <HEAD> <meta charset="utf-8" />
+        <title>Domestic Cat</title>
+    </HEAD>
+    <body>
+<h1>The domestic cat</h1>
+<p>Click <a href="DomesticCatLion">here</a> for more information about the lions</p>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pattern</title>
+  <style>
+    .Border {
+      border: 1px solid black;
+      margin: 0; 
+      padding: 5px;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;  /* Center all groups as a whole */
+      align-items: center;
+      gap: 150px; /* Controls space between left, middle, right */
+    }
+
+    .group {
+      display: grid;
+    }
+
+    .left, .right {
+      grid-template-rows: repeat(4, 100px);
+      gap: 20px; /* vertical spacing between column boxes */
+    }
+
+    .middle {
+      grid-template-columns: repeat(4, 100px);
+      gap: 70px; /* spacing between middle row boxes */
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+
+
+<body>
+<h3>ASSET</h3>
+<div class = "Border">
+  <div class="wrapper">
+    <div class="group left">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+ 
+    <div class="group middle">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+  
+    <div class="group right">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
+
+
+
+
