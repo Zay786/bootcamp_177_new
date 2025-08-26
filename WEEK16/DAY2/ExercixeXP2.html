@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Exercise</title>
+</head>
+<body>
+  <form id="userForm">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="firstname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lastname"><br><br>
+    <input type="submit" value="Submit" id="submit">
+  </form> 
+
+  <ul class="usersAnswer"></ul>
+
+  <script>
+    // 1. Retrieve the form and console.log it
+    const form = document.getElementById("userForm");
+    console.log("Form:", form);
+
+    // 2. Retrieve inputs by their id and console.log them
+    const firstNameInput = document.getElementById("fname");
+    const lastNameInput = document.getElementById("lname");
+    console.log("By ID:", firstNameInput, lastNameInput);
+
+    // 3. Retrieve inputs by their name attribute and console.log them
+    const firstNameByName = document.getElementsByName("firstname")[0];
+    const lastNameByName = document.getElementsByName("lastname")[0];
+    console.log("By Name:", firstNameByName, lastNameByName);
+
+    // 4. Submit event listener
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      // ❓ why: preventDefault stops the page from refreshing & sending data to the server,
+      // so we can handle the form with JavaScript.
+
+      const firstName = firstNameInput.value.trim();
+      const lastName = lastNameInput.value.trim();
+
+      if (firstName === "" || lastName === "") {
+        alert("Please fill out both fields.");
+        return;
+      }
+
+      const ul = document.querySelector(".usersAnswer");
+      ul.innerHTML = ""; // Clear previous entries
+
+      // Create li for each input value
+      const li1 = document.createElement("li");
+      li1.textContent = firstName;
+      const li2 = document.createElement("li");
+      li2.textContent = lastName;
+
+      // Append to ul
+      ul.appendChild(li1);
+      ul.appendChild(li2);
+    });
+  </script>
+</body>
+</html>
