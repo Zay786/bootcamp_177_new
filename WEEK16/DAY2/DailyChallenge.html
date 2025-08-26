@@ -41,10 +41,11 @@
 
       // Story templates (with placeholders)
       const storyTemplates = [
-        (n, adj, p, v, pl) => `${p} decided to ${v} with a ${adj} ${n} in ${pl}.`,
-        (n, adj, p, v, pl) => `Once upon a time, a ${adj} ${n} convinced ${p} to ${v} all the way to ${pl}.`,
-        (n, adj, p, v, pl) => `In ${pl}, ${p} found a ${adj} ${n} and started to ${v} uncontrollably.`,
-        (n, adj, p, v, pl) => `${p} took their ${adj} ${n} to ${pl} and tried to ${v}, but it was a disaster!`
+        (n, adj, p, v, pl) => `${p} wanted to ${v} with a ${adj} ${n} in ${pl}.`,
+        (n, adj, p, v, pl) => `Once upon a time, a ${n} was asked to ${v} all the way to ${pl}.`,
+        (n, adj, p, v, pl) => `In ${pl}, ${p} found a ${adj} ${n} and started to ${v} so fast.`,
+        (n, adj, p, v, pl) => `${p} took their ${adj} ${n} to ${pl} and tried to ${v}, but it was a disaster!`,
+        (n, adj, p, v, pl) => `${p} fed the ${n} a ${adj} to ${v} at ${pl}.`
       ];
 
       let currentValues = null; // To store user inputs
