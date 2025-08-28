@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #target {
+          width: 200px;
+          height: 200px;
+          position: relative;
+          background: yellow;
+        }
+        #box {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="target"></div>
+    <br>
+    <div id="box" draggable="true"></div> <!-- make box draggable -->
+</body>
+    <script>
+        // Get elements
+        const box = document.getElementById("box");
+        const target = document.getElementById("target");
+
+        // Allow drop on target
+        target.addEventListener("dragover", (event) => {
+            event.preventDefault(); // Needed to allow dropping
+        });
+
+        // When dragging starts
+        box.addEventListener("dragstart", (event) => {
+            event.dataTransfer.setData("id", event.target.id); 
+        });
+
+        // When dropped inside target
+        target.addEventListener("drop", (event) => {
+            event.preventDefault();
+            const id = event.dataTransfer.getData("id");
+            const draggedElement = document.getElementById(id);
+            target.appendChild(draggedElement); // move box inside target
+            draggedElement.style.position = "absolute"; 
+            draggedElement.style.top = "75px";  // center roughly
+            draggedElement.style.left = "75px"; 
+        });
+    </script>
+
+</html>
