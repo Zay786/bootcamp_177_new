@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sunrise Times</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input { padding: 5px; margin: 5px; width: 150px; }
+    button { padding: 5px 10px; cursor: pointer; }
+    #results { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Sunrise Times for Two Cities</h1>
+
+  <form id="sunForm">
+    <h3>City 1:</h3>
+    <input type="number" step="any" id="lat1" placeholder="Latitude" required>
+    <input type="number" step="any" id="lng1" placeholder="Longitude" required>
+    <h3>City 2:</h3>
+    <input type="number" step="any" id="lat2" placeholder="Latitude" required>
+    <input type="number" step="any" id="lng2" placeholder="Longitude" required>
+    <br>
+    <button type="submit">Get Sunrise Times</button>
+  </form>
+
+  <div id="results"></div>
+
+  <script>
+    const form = document.getElementById("sunForm");
+    const resultsDiv = document.getElementById("results");
+
+    async function getSunrise(lat, lng) {
+      const url = `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&formatted=0`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        return data.results.sunrise;
+      } catch (error) {
+        throw new Error(`Error fetching sunrise for (${lat},${lng}): ${error}`);
+      }
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      resultsDiv.innerHTML = "Fetching sunrise times...";
+
+      const lat1 = document.getElementById("lat1").value;
+      const lng1 = document.getElementById("lng1").value;
+      const lat2 = document.getElementById("lat2").value;
+      const lng2 = document.getElementById("lng2").value;
+
+      try {
+        const [sunrise1, sunrise2] = await Promise.all([
+          getSunrise(lat1, lng1),
+          getSunrise(lat2, lng2)
+        ]);
+
+        resultsDiv.innerHTML = `
+          <p>City 1 Sunrise: ${new Date(sunrise1).toLocaleTimeString()}</p>
+          <p>City 2 Sunrise: ${new Date(sunrise2).toLocaleTimeString()}</p>
+        `;
+      } catch (error) {
+        resultsDiv.innerHTML = `<p style="color:red">${error}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

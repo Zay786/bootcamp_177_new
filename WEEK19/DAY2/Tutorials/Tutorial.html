@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let artworks;
+        let mypromise = fetch("https://api.artic.edu/api/v1/artworks") // returns a promise
+        mypromise.then(function(data) { // we are getting the data and formatting it to json object
+            //document.getElementById("artworks").innerHTML = "<h2>We will display the artworks here</h2>"
+            return data.json()
+        }).then(function(data) { // here we will display the data
+            artworks = data.data
+            let li_string = ""
+            for (let i = 0; i < artworks.length; i++){
+                let singleartwork = artworks[i]
+                console.log(singleartwork)
+                li_string += "<li>" + singleartwork.title + "</li>"
+            }
+            console.log(li_string)
+            document.getElementById("artworks_list").innerHTML = li_string
+            
+        })
+        mypromise.catch(function(data) {
+            console.log(data)
+            document.getElementById("artworks").innerHTML = "<h2 style='background-color: red;'>The link is not good</h2>"
+        })
+    </script>
+</head>
+<body>
+    <h1>Welcome to Artworks display</h1>
+    <div id="artworks">
+        <ul id="artworks_list">
+            <li>Loading....</li>
+        </ul>
+    </div>
+</body>
+</html>
