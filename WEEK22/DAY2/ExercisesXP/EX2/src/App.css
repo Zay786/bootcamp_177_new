@@ -1,0 +1,10 @@
+/* App.css */
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+li {
+  font-size: 18px;
+  margin: 5px 0;
+}
