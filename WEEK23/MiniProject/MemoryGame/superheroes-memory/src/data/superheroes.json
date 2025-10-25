@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "name": "Captain America",
+      "occupation": "Soldier",
+      "image": "https://wallpapers.com/images/hd/captain-america-android-0aqaztdwgpz41epy.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Iron Man",
+      "occupation": "CEO Stark Ind",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCAM8XUB2KIL-fiqnBP3rej4WTKvluWWG8Rg&s"
+    },
+    {
+      "id": 3,
+      "name": "Hulk",
+      "occupation": "Biochemist",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1hwNvrrx2zVWrpUi88eLRe6BahF_9UuZXvw&s"
+    },
+    {
+      "id": 4,
+      "name": "Thor",
+      "occupation": "Warrior",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPcv16zyVEWl918QhzHiNxINVQCbonSx9oJA&s"
+    },
+    {
+      "id": 5,
+      "name": "Batman",
+      "occupation": "Expert Detective",
+      "image": "https://cdn.britannica.com/78/253178-050-7F4A01C5/Publicity-still-showing-Christian-Bale-in-The-Dark-Knight-Batman-movie.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Superman",
+      "occupation": "Journalist",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Superman_Man_of_Steel.jpg/250px-Superman_Man_of_Steel.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Wonder Woman",
+      "occupation": "Secretary",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_33ecS2qO9HUOEg4Jn87Vx_XjaO6DwOJ5eQ&s"
+    },
+    {
+      "id": 8,
+      "name": "Flash",
+      "occupation": "Forensic Sci.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq1J1T0OZMgVa8s9ppB3x1mErVXj3K91BhXg&s"
+    },
+    {
+      "id": 9,
+      "name": "Wolverine",
+      "occupation": "Adventurer",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSyshNU6uqXdW7nIo1CBcls_9Ygo3VbYiQ2Q&s"
+    },
+    {
+      "id": 10,
+      "name": "Spider-Man",
+      "occupation": "Photographer",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVp8Y6JGeE1jlU3-wga7l8SOIKuEHO03IVMA&s"
+    },
+    {
+      "id": 11,
+      "name": "Deadpool",
+      "occupation": "Mercenary",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWq2l85TCeBoIC4F10ouPlrOTJ5MFS92nXtw&s"
+    },
+    {
+      "id": 12,
+      "name": "Mr Incredible",
+      "occupation": "Insurance Rep.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTu_aNPWbSFvSHb9Kz1v-jf54rCT2fmOEmVg&s"
+    }
+]
