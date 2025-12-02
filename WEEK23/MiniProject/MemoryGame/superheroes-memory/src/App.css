@@ -1,0 +1,115 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.navbar-scores span {
+  margin-left: 20px;
+  font-size: 1.1rem;
+}
+
+/* Instruction Bar */
+.instruction-bar {
+  background-color: #f0ad4e;
+  color: #333;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Game Area Grid */
+.game-area {
+  display: grid;
+  /* Creates 4 columns of equal width */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-container {
+  height: 200px; /* Fixed height for image area */
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  display: block;
+}
+
+.card-info {
+  padding: 10px;
+  text-align: left;
+}
+
+.card-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.card-info strong {
+  font-size: 1rem;
+  color: #007bff;
+}
+
+/* Media Query for smaller screens (e.g., tablets/mobiles) */
+@media (max-width: 992px) {
+  .game-area {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .game-area {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+  }
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .navbar-scores {
+    margin-top: 10px;
+  }
+  .navbar-scores span {
+    margin: 0 10px;
+  }
+}

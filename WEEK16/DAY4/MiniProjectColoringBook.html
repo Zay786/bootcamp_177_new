@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coloring Squares</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+   h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #container {
+      display: flex;
+      align-items: center;
+      gap: 40px; 
+    }
+ input[type="color"] {
+  width: 50px;       
+  height: 50px;      
+  border: none;      
+  padding: 0;
+  cursor: pointer;
+}
+    #controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; 
+    }
+
+    button, input[type="color"] {
+      width: 120px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    /* Grid */
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(20, 20px); /* 20x20 grid */
+      grid-template-rows: repeat(20, 20px);
+      gap: 1px;
+    }
+
+    .cell {
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    .cell:hover {
+      outline: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+<h1>SQUARES COLORING BOOK</h1>
+
+  <div id="container">
+    <div id="controls">
+      <label>Select a color:</label>
+      <input type="color" id="colorPicker" value="#ff0000">
+      <button id="eraser">🩹 Eraser</button>
+      <button id="reset">🔄 Reset</button>
+    </div>
+
+    <div id="grid"></div>
+  </div>
+</body>
+  <script>
+    const grid = document.getElementById("grid");
+    const colorPicker = document.getElementById("colorPicker");
+    const eraserBtn = document.getElementById("eraser");
+    const resetBtn = document.getElementById("reset");
+
+    let currentColor = colorPicker.value;
+    let isDrawing = false;
+    let isErasing = false;
+
+    // Update chosen color
+    colorPicker.addEventListener("input", (e) => {
+      currentColor = e.target.value;
+      isErasing = false;
+      eraserBtn.textContent = "🩹 Eraser";
+    });
+
+    // Toggle eraser mode
+    eraserBtn.addEventListener("click", () => {
+      isErasing = !isErasing;
+      eraserBtn.textContent = isErasing ? "🎨 Back to Color" : "🩹 Eraser";
+    });
+
+    // Reset grid
+    resetBtn.addEventListener("click", () => {
+      const cells = document.querySelectorAll(".cell");
+      cells.forEach(cell => cell.style.background = "white");
+    });
+
+    // Build 20x20 grid
+    for (let i = 0; i < 400; i++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+
+      cell.addEventListener("mousedown", () => {
+        isDrawing = true;
+        cell.style.background = isErasing ? "white" : currentColor;
+      });
+
+      cell.addEventListener("mouseover", () => {
+        if (isDrawing) {
+          cell.style.background = isErasing ? "white" : currentColor;
+        }
+      });
+
+      grid.appendChild(cell);
+    }
+
+    document.addEventListener("mouseup", () => {
+      isDrawing = false;
+    });
+  </script>
+
+
+</html>
+
+

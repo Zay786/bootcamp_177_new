@@ -1,0 +1,22 @@
+{
+  "SocialMedias": [
+    { "id": 1, "name": "Facebook", "url": "https://facebook.com" },
+    { "id": 2, "name": "Twitter", "url": "https://twitter.com" },
+    { "id": 3, "name": "Instagram", "url": "https://instagram.com" }
+  ],
+  "Skills": ["JavaScript", "React", "HTML", "CSS", "Node.js"],
+  "Experiences": [
+    {
+      "id": 1,
+      "company": "ABC Corp",
+      "role": "Frontend Developer",
+      "duration": "2 years"
+    },
+    {
+      "id": 2,
+      "company": "XYZ Ltd",
+      "role": "Full Stack Developer",
+      "duration": "3 years"
+    }
+  ]
+}

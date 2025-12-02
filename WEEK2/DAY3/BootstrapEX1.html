@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <style>
+          .bordered {
+      border: 2px solid #000;
+      padding: 10px;
+      text-align: center;
+    }
+    body {
+      margin: 20px;
+    }
+    </style>
+</head>
+<body>
+ <h2>1. 2 Rows, 3 Columns (Full width)</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-4 bordered">Row 1, Col 1</div>
+      <div class="col-4 bordered">Row 1, Col 2</div>
+      <div class="col-4 bordered">Row 1, Col 3</div>
+    </div>
+    <div class="row">
+      <div class="col-4 bordered">Row 2, Col 1</div>
+      <div class="col-4 bordered">Row 2, Col 2</div>
+      <div class="col-4 bordered">Row 2, Col 3</div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- 2. Container + 2 Rows + 2 Columns with Offset -->
+  <h2>2. 2 Rows, 2 Columns with Offset</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-4 bordered">Row 1, Col 1</div>
+      <div class="col-4 offset-4 bordered">Row 1, Col 2 (offset)</div>
+    </div>
+    <div class="row">
+      <div class="col-3 bordered">Row 2, Col 1</div>
+      <div class="col-3 offset-6 bordered">Row 2, Col 2 (offset)</div>
+    </div>
+  </div>
+<hr>
+
+  <!-- 3. No Container -->
+  <h2>3. No Container</h2>
+  <div class="row">
+    <div class="col-6 bordered">Row 1, Col 1</div>
+    <div class="col-6 bordered">Row 1, Col 2</div>
+  </div>
+  <div class="row">
+    <div class="col-6 bordered">Row 2, Col 1</div>
+    <div class="col-6 bordered">Row 2, Col 2</div>
+  </div>
+  <!-- ⚠️ Without a container, the content spans edge-to-edge (no padding on sides) -->
+
+  <hr>
+
+  <!-- 4. No Row -->
+  <h2>4. Container without Row</h2>
+  <div class="container">
+    <div class="col-6 bordered">Col 1 (no row)</div>
+    <div class="col-6 bordered">Col 2 (no row)</div>
+  </div>
+
+   <hr>
+
+  <!-- 5. Responsive Columns -->
+  <h2>5. Responsive Columns (1 Row, 3 Columns)</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 bordered">Responsive Col 1</div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 bordered">Responsive Col 2</div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-6 bordered">Responsive Col 3</div>
+    </div>
+  </div>
+  <!-- ✅
+    - Extra small (<576px): stacked full width (col-12)
+    - Small (≥576px): 2 columns (col-sm-6), 3rd one full
+    - Medium (≥768px): 3 equal cols (col-md-4)
+    - Large (≥992px): 2 small + 1 wide (col-lg-6)
+  -->
+
+  <!-- Bootstrap JS -->
+</body>
+</html>

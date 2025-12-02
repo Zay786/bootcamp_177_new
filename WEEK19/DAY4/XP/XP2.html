@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sun GIFs</title>
+</head>
+<body>
+  <h1>Sun GIFs from Giphy</h1>
+
+  <script>
+    const API_URL = "https://api.giphy.com/v1/gifs/search?q=sun&rating=g&limit=10&offset=2&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+
+    fetch(API_URL)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const container = document.createElement("div");
+        document.body.appendChild(container);
+
+        data.data.forEach(gif => {
+          const img = document.createElement("img");
+          img.src = gif.images.original.url;
+          img.alt = gif.title;
+          img.style.width = "200px";
+          img.style.margin = "5px";
+          container.appendChild(img);
+        });
+      })
+      .catch(error => console.error("Fetch error:", error));
+  </script>
+</body>
+</html>
