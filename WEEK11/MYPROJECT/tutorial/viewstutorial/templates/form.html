@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ABC Online Courses</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:#dbeeff;   /* baby blue background */
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width:420px;
+    margin:80px auto;
+    background:white;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+h1{
+    text-align:center;
+    color:#1a3d6d;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#555;
+    margin-bottom:25px;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:10px;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:#4da6ff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#3399ff;
+}
+
+.description{
+    text-align:center;
+    font-size:14px;
+    color:#666;
+    margin-bottom:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>ABC Online Courses</h1>
+
+<p class="subtitle">Empower your future with the right skills</p>
+
+<p class="description">
+Kindly fill in the form below and select your desired course.
+</p>
+
+<form action="{% url 'submit' %}" method="post">
+{% csrf_token %}
+
+<label>Name</label>
+<input type="text" name="name" required>
+
+<label>Age</label>
+<input type="number" name="age" required>
+
+<label>Course</label>
+<input type="text" name="course" required>
+
+<label>Course Type</label>
+<select name="course_type">
+
+<option value="Django">Django</option>
+<option value="Python">Python</option>
+<option value="JavaScript">JavaScript</option>
+<option value="Computer Science">Computer Science</option>
+<option value="Other">Other</option>
+
+</select>
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

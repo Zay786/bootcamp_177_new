@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Students</title>
+</head>
+
+<body>
+
+<h1><strong>Thank you for your submission.</strong></h1>
+    <br>
+    <h2>Please find below some information about your future classmates.</h2>
+    <br>
+
+<a href="{% url 'form_submission' %}">
+<button>Add Student</button>
+</a>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Course</th>
+<th>Course Type</th>
+<th>Actions</th>
+</tr>
+
+{% for student in students %}
+
+<tr>
+<td>{{ student.name }}</td>
+<td>{{ student.age }}</td>
+<td>{{ student.course }}</td>
+<td>{{ student.course_type }}</td>
+
+<td>
+
+<a href="{% url 'edit_student' student.id %}">
+<button>Edit</button>
+</a>
+
+<a href="{% url 'delete_student' student.id %}">
+<button>Delete</button>
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

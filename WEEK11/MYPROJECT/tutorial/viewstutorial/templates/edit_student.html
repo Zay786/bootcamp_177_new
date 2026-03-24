@@ -1,0 +1,32 @@
+<h2>Edit Student</h2>
+
+<form method="post">
+{% csrf_token %}
+
+<p>Name: {{ student.name }}</p>
+
+<p>Age: {{ student.age }}</p>
+
+<label>Course:</label>
+<input type="text" name="course" value="{{ student.course }}">
+
+<br><br>
+
+<label>Course Type:</label>
+<select name="course_type">
+
+<option value="Django">Django</option>
+<option value="Python">Python</option>
+<option value="JavaScript">JavaScript</option>
+<option value="Computer Science">Computer Science</option>
+<option value="Other">Other</option>
+
+
+
+</select>
+
+<br><br>
+
+<button type="submit">Save</button>
+
+</form>
